@@ -6,7 +6,6 @@ use BedWars\MySQL\JoinTask;
 use BedWars\MySQL\ShowStatsQuery;
 use BedWars\Task\StartArenaTask;
 use BedWars\Task\WorldCopyTask;
-use MTCore\MTCore;
 use pocketmine\block\Block;
 use pocketmine\event\player\PlayerPreLoginEvent;
 use pocketmine\inventory\PlayerInventory;
@@ -46,15 +45,11 @@ class BedWars extends PluginBase implements Listener{
     /** @var Arena[] */
     public $ins = [];
 
-    /** @var  MTCore $mtcore */
-    public $mtcore;
-
     public $restart;
 
     public function onEnable(){
         new MySQLManager($this);
         $this->level = $this->getServer()->getDefaultLevel();
-        $this->mtcore = $this->getServer()->getPluginManager()->getPlugin("MTCore");
         $this->setMapsData();
         $this->setArenasData();
         $this->registerArena("bw-1");
