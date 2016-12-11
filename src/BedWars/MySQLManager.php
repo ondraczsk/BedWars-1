@@ -18,7 +18,7 @@ class MySQLManager{
     }
     
     public function createMySQLConnection(){
-        $database = new \mysqli("93.91.250.135", "180532_mysql_db", "kaktus01", "180532_mysql_db");
+        $database = new \mysqli("82.208.17.11", "224877_mysql_db", "centrum", "224877_mysql_db");
         self::setDatabase($database);
         if($database->connect_error) {
             $this->plugin->getLogger()->critical("Nepodarilo se navazat pripojeni s databazi". $database->connect_error);
@@ -30,7 +30,7 @@ class MySQLManager{
     }
 
     public static function getMysqliConnection() {
-        return new \mysqli("93.91.250.135", "180532_mysql_db", "kaktus01", "180532_mysql_db");
+        return new \mysqli("82.208.17.11", "224877_mysql_db", "centrum", "224877_mysql_db");
     }
 
     public static function setDatabase(\mysqli $database){
